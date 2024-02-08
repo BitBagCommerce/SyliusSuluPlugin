@@ -1,11 +1,12 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "bitbag/sulu-plugin",
     "type": "sylius-plugin",
-    "description": "Acme example plugin for Sylius.",
     "keywords": [
         "sylius",
-        "sylius-plugin"
+        "sylius-plugin",
+        "sylius-sulu-cms"
     ],
+    "description": "Sulu CMS plugin for Sylius applications.",
     "license": "MIT",
     "require": {
         "php": "^8.0",
@@ -64,8 +65,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "BitBag\\SyliusSuluPlugin\\": "src/",
+            "Tests\\BitBag\\SyliusSuluPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
