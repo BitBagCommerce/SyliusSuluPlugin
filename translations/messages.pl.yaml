@@ -1,0 +1,7 @@
+bitbag:
+    sulu_plugin:
+        purge_channel_cache: Wyczyść cache sulu
+        purge_channel_cache_en_us: Wyczyść cache sulu en_us
+        purge_channel_cache_pl_pl: Wyczyść cache sulu pl_pl
+        use_localized_url: Używaj locale w url
+        sulu_config: Sulu - konfiguracja

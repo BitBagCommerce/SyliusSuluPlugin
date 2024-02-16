@@ -1,0 +1,6 @@
+bitbag:
+    sulu_plugin:
+        cache:
+            dir_not_exists: Nie znaleziono katalogu z cachem sulu
+            something_goes_wrong: Coś poszło nie tak
+            successful_purged: Pomyślnie wyczyszczono cache
