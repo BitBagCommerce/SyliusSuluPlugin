@@ -1,17 +1,22 @@
-{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
-
-{% set baseParameters = options.link.parameters %}
-
 {% if true == data.isSuluUseLocalizedUrls %}
-    {% for locale in data.locales %}
-        {% set parameters =  baseParameters|merge({'locale': locale.code})%}
-        {% set path = options.link.url|default(path(options.link.route, parameters)) %}
+    <div class="ui labeled icon floating dropdown link button">
+        <i class="trash icon"></i>
+        <span class="text">{{ action.label|trans }}</span>
+        <div class="menu">
+            {% set baseParameters = options.link.parameters %}
 
-        {{ buttons.default(path, action.label ~ '_' ~locale.code|lower , null, action.icon, 'blue') }}
-    {% endfor %}
+            {% for locale in data.locales %}
+                {% set parameters =  baseParameters|merge({'locale': locale.code})%}
+                {% set path = options.link.url|default(path(options.link.route, parameters)) %}
+
+                <a class="item" href="{{ path }}"><i class="trash icon test"></i> {{ locale.code}} </a>
+            {% endfor %}
+        </div>
+    </div>
 {% else %}
+    {% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+
     {% set path = options.link.url|default(path(options.link.route, options.link.parameters)) %}
 
     {{ buttons.default(path, action.label , null, action.icon, 'blue') }}
-{% endif %}
-
+{% endif%}

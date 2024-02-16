@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusSuluPlugin\DependencyInjection;
 
+use BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRenderStrategyInterface;
+use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRenderStrategyInterface;
 use Sylius\Bundle\CoreBundle\DependencyInjection\PrependDoctrineMigrationsTrait;
 use Sylius\Bundle\ResourceBundle\DependencyInjection\Extension\AbstractResourceExtension;
 use Symfony\Component\Config\FileLocator;
@@ -21,6 +23,9 @@ final class BitBagSyliusSuluExtension extends AbstractResourceExtension implemen
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
 
         $loader->load('services.xml');
+
+        $this->RegisterPageRenderers($container);
+        $this->RegisterBlockRenderers($container);
     }
 
     public function prepend(ContainerBuilder $container): void
@@ -43,5 +48,19 @@ final class BitBagSyliusSuluExtension extends AbstractResourceExtension implemen
         return [
             'Sylius\Bundle\CoreBundle\Migrations',
         ];
+    }
+
+    private function RegisterPageRenderers(ContainerBuilder $container): void
+    {
+        $container->registerForAutoconfiguration(SuluPageRenderStrategyInterface::class)
+            ->addTag('bitbag.sylius_sulu_plugin.strategy.page_renderer')
+        ;
+    }
+
+    private function RegisterBlockRenderers(ContainerBuilder $container): void
+    {
+        $container->registerForAutoconfiguration(SuluBlockRenderStrategyInterface::class)
+            ->addTag('bitbag.sylius_sulu_plugin.strategy.block_renderer')
+        ;
     }
 }
