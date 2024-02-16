@@ -1,0 +1,37 @@
+parameters:
+    bitbag.sulu_base_uri: "%env(string:SULU_BASE_URI)%"
+    bitbag.sulu_cache_dir: "%kernel.cache_dir%/sulu"
+
+when@prod:
+    framework:
+        http_cache: true
+when@dev:
+    framework:
+        http_cache: false
+        
+
+sylius_grid:
+    grids:
+        sylius_admin_channel:
+            actions:
+                item:
+                    invalidate_sulu_cache:
+                        type: invalidate_sulu_cache
+                        label: bitbag.sulu_plugin.purge_channel_cache
+                        icon: sync
+                        options:
+                            link:
+                                route: bitbag_purge_sulu_cache_for_channel
+                                parameters:
+                                    id: resource.id
+    templates:
+        action:
+            invalidate_sulu_cache: "@BitBagSyliusSuluPlugin/Admin/Grid/Action/invalidateSuluCache.html.twig"
+
+sylius_ui:
+    events:
+        sylius.admin.channel.form.second_column_content:
+            blocks:
+                sulu_configuration:
+                    template: '@BitBagSyliusSuluPlugin/Admin/Channel/Form/_suluConfig.html.twig'
+                    priority: 0
