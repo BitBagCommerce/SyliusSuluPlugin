@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+            http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service class="BitBag\SyliusSuluPlugin\Twig\Extension\SuluPageExtension"
+                 id="bitbag.sylius_sulu_plugin.twig.extension.sulu_page_extension"
+        >
+            <argument id="bitbag.sylius_sulu_plugin.twig.runtime.sulu_runtime" type="service"/>
+            <tag name="twig.extension"/>
+        </service>
+
+        <service class="BitBag\SyliusSuluPlugin\Twig\Runtime\SuluRuntime"
+                 id="bitbag.sylius_sulu_plugin.twig.runtime.sulu_runtime"
+        >
+            <argument id="bitbag.sylius_sulu_plugin.api_client.sulu_api_client" type="service"/>
+            <argument id="bitbag.sylius_sulu_plugin.renderer.block.sulu_block_renderer_strategy" type="service"/>
+            <argument id="bitbag.sylius_sulu_plugin.renderer.page.sulu_page_renderer_strategy" type="service"/>
+            <tag name="twig.runtime"/>
+        </service>
+    </services>
+</container>

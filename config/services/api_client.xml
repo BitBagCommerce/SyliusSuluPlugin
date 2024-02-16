@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+            http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service class="BitBag\SyliusSuluPlugin\ApiClient\SuluApiClient"
+                 id="bitbag.sylius_sulu_plugin.api_client.sulu_api_client"
+        >
+            <argument id="http_client" type="service"/>
+            <argument id="sylius.context.shopper" type="service"/>
+            <argument>%bitbag.sulu_base_uri%</argument>
+            <argument>%bitbag.sulu_cache_dir%</argument>
+        </service>
+    </services>
+</container>

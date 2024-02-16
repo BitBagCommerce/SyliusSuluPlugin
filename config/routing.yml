@@ -1,0 +1,6 @@
+sylius_sulu_plugin_admin:
+    resource: "@BitBagSyliusSuluPlugin/config/routing/admin_routing.yml"
+    prefix: admin
+    
+sylius_sulu_plugin_shop:
+    resource: "@BitBagSyliusSuluPlugin/config/routing/shop_routing.yml"
