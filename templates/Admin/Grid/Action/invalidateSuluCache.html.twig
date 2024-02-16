@@ -2,7 +2,7 @@
 
 {% set baseParameters = options.link.parameters %}
 
-{% if true == data.isSuluUseLocalizationUrl %}
+{% if true == data.isSuluUseLocalizedUrls %}
     {% for locale in data.locales %}
         {% set parameters =  baseParameters|merge({'locale': locale.code})%}
         {% set path = options.link.url|default(path(options.link.route, parameters)) %}

@@ -14,7 +14,7 @@ final class ChannelTypeExtension extends AbstractTypeExtension
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('suluUseLocalizationUrl', CheckboxType::class, [
+            ->add('suluUseLocalizedUrls', CheckboxType::class, [
                 'label' => 'bitbag.sulu_plugin.use_localized_url',
             ])
         ;

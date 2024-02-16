@@ -33,7 +33,7 @@ class SuluRuntime implements SuluRuntimeInterface
 
     public function renderSuluBlocks(array $blocks, ?string $divider = null): string
     {
-        $content = null;
+        $content = '';
 
         foreach ($blocks as $block) {
             $content .= $this->blockRendererStrategy->renderBlock($block);
@@ -46,7 +46,7 @@ class SuluRuntime implements SuluRuntimeInterface
     public function renderSuluBlocksWithType(array $blocks, string $type, ?string $divider = null): string
     {
         $blocks = array_filter($blocks, fn (array $block) => $block['type'] === $type);
-        $content = null;
+        $content = '';
 
         foreach ($blocks as $block) {
             $content .= $this->blockRendererStrategy->renderBlock($block);
@@ -63,7 +63,7 @@ class SuluRuntime implements SuluRuntimeInterface
         if (count($blocks) > 1) {
             $blocks = $blocks[0];
         }
-        $content = null;
+        $content = '';
 
         foreach ($blocks as $block) {
             $content .= $this->blockRendererStrategy->renderBlock($block);
