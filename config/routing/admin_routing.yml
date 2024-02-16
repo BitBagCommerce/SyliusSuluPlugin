@@ -1,7 +1,8 @@
 bitbag_purge_sulu_cache_for_channel:
-    path: /invalidate-sulu-cache/{locale}/{id}
+    path: /invalidate-sulu-cache/{id}/{locale}
     methods: [GET]
     defaults:
+        locale: ''
         _controller: bitbag.sylius_sulu_plugin.controller.action.purge_sulu_cache_action
         _sylius:
             section: admin

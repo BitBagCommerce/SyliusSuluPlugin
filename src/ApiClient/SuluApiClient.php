@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
+use Webmozart\Assert\Assert;
 
 final class SuluApiClient
 {
@@ -24,18 +25,21 @@ final class SuluApiClient
     public function fetchCmsContent(string $url): array
     {
         $channel = $this->shopperContext->getChannel();
-
-        $locale = null;
-        if ($channel->isSuluUseLocalizationUrl()) {
-            $locale = $this->shopperContext->getLocaleCode();
-        }
-
-        $store = new Store(sprintf(
-            '%s/%s/%s',
+        $locale = '';
+        $storeRoot = sprintf(
+            '%s/%s',
             $this->cacheDir,
             $channel->getCode() ?? 'GLOBAL',
-            $locale,
-        ));
+        );
+
+        Assert::methodExists($channel, 'isSuluUseLocalizedUrls');
+
+        if ($channel->isSuluUseLocalizedUrls()) {
+            $locale = $this->shopperContext->getLocaleCode();
+            $storeRoot = sprintf('%s/%s', $storeRoot, $locale);
+        }
+
+        $store = new Store($storeRoot);
 
         $this->client = new CachingHttpClient($this->client, $store);
 
@@ -47,7 +51,11 @@ final class SuluApiClient
             return [];
         }
 
-        return json_decode($response->getContent(), true);
+        $response = json_decode($response->getContent(), true);
+
+        Assert::isArray($response);
+
+        return $response;
     }
 
     private function makeApiCall(string $url): ResponseInterface
@@ -65,7 +73,7 @@ final class SuluApiClient
 
     private function createUrl(string $url, ?string $locale = null): string
     {
-        if (null === $locale) {
+        if (null === $locale || strlen($locale) === 0) {
             return sprintf('%s/%s.json', $this->suluBaseUri, $url);
         }
 

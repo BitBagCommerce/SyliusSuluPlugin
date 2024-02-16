@@ -6,15 +6,15 @@ namespace BitBag\SyliusSuluPlugin\Entity;
 
 trait SuluChannelConfigurationTrait
 {
-    protected bool $suluUseLocalizationUrl = false;
+    protected bool $suluUseLocalizedUrls = false;
 
-    public function isSuluUseLocalizationUrl(): bool
+    public function isSuluUseLocalizedUrls(): bool
     {
-        return $this->suluUseLocalizationUrl;
+        return $this->suluUseLocalizedUrls;
     }
 
-    public function setSuluUseLocalizationUrl(bool $suluUseLocalizationUrl): void
+    public function setSuluUseLocalizedUrls(bool $suluUseLocalizedUrls): void
     {
-        $this->suluUseLocalizationUrl = $suluUseLocalizationUrl;
+        $this->suluUseLocalizedUrls = $suluUseLocalizedUrls;
     }
 }
