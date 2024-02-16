@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+            http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service class="BitBag\SyliusSuluPlugin\Controller\Action\PurgeSuluCacheAction"
+                 id="bitbag.sylius_sulu_plugin.controller.action.purge_sulu_cache_action"
+                 public="true"
+        >
+            <argument id="sylius.repository.channel" type="service"/>
+            <argument id="request_stack" type="service"/>
+            <argument id="translator" type="service"/>
+            <argument>%bitbag.sulu_cache_dir%</argument>
+        </service>
+
+
+        <service class="BitBag\SyliusSuluPlugin\Controller\Action\RenderPageAction"
+                 id="bitbag.sylius_sulu_plugin.controller.action.render_page_action"
+                 public="true"
+        >
+            <argument type="service" id="bitbag.sylius_sulu_plugin.api_client.sulu_api_client"/>
+            <argument type="service" id="bitbag.sylius_sulu_plugin.renderer.page.sulu_page_renderer_strategy"/>
+        </service>
+    </services>
+</container>

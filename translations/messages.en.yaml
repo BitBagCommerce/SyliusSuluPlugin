@@ -1,0 +1,7 @@
+bitbag:
+    sulu_plugin:
+        purge_channel_cache: Purg sulu cache
+        purge_channel_cache_en_us: Purge sulu cache en_us
+        purge_channel_cache_pl_pl: Purge sulu cache pl_pl
+        use_localized_url: Use localized urls
+        sulu_config: Sulu configuration

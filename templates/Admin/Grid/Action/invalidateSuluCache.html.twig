@@ -1,0 +1,17 @@
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+
+{% set baseParameters = options.link.parameters %}
+
+{% if true == data.isSuluUseLocalizationUrl %}
+    {% for locale in data.locales %}
+        {% set parameters =  baseParameters|merge({'locale': locale.code})%}
+        {% set path = options.link.url|default(path(options.link.route, parameters)) %}
+
+        {{ buttons.default(path, action.label ~ '_' ~locale.code|lower , null, action.icon, 'blue') }}
+    {% endfor %}
+{% else %}
+    {% set path = options.link.url|default(path(options.link.route, options.link.parameters)) %}
+
+    {{ buttons.default(path, action.label , null, action.icon, 'blue') }}
+{% endif %}
+

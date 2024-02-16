@@ -1,0 +1,6 @@
+bitbag:
+    sulu_plugin:
+        cache:
+            dir_not_exists: Dir with sulu cache not found
+            something_goes_wrong: Something goes wrong
+            successful_purged: Successfully purged
