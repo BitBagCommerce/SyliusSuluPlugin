@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusSuluPlugin\Twig\Runtime;
 
-use BitBag\SyliusSuluPlugin\ApiClient\SuluApiClient;
-use BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRendererStrategy;
-use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategy;
+use BitBag\SyliusSuluPlugin\ApiClient\SuluApiClientInterface;
+use BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRendererStrategyInterface;
+use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategyInterface;
 
 class SuluRuntime implements SuluRuntimeInterface
 {
     public function __construct(
-        private SuluApiClient $suluApiClient,
-        private SuluBlockRendererStrategy $blockRendererStrategy,
-        private SuluPageRendererStrategy $pageRendererStrategy,
+        private SuluApiClientInterface $suluApiClient,
+        private SuluBlockRendererStrategyInterface $blockRendererStrategy,
+        private SuluPageRendererStrategyInterface $pageRendererStrategy,
     ) {
     }
 

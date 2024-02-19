@@ -12,7 +12,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 use Webmozart\Assert\Assert;
 
-final class SuluApiClient
+final class SuluApiClient implements SuluApiClientInterface
 {
     public function __construct(
         private HttpClientInterface $client,

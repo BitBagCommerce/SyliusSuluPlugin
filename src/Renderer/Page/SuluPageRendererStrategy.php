@@ -7,7 +7,7 @@ namespace BitBag\SyliusSuluPlugin\Renderer\Page;
 use Twig\Error\Error;
 use Twig\Error\RuntimeError;
 
-final class SuluPageRendererStrategy
+final class SuluPageRendererStrategy implements SuluPageRendererStrategyInterface
 {
     public function __construct(
         private iterable $pageRenderers,
