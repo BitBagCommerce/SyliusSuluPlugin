@@ -7,7 +7,7 @@ namespace BitBag\SyliusSuluPlugin\Renderer\Block;
 use Twig\Error\Error;
 use Twig\Error\RuntimeError;
 
-final class SuluBlockRendererStrategy
+final class SuluBlockRendererStrategy implements SuluBlockRendererStrategyInterface
 {
     public function __construct(
         private iterable $blockRenderers,

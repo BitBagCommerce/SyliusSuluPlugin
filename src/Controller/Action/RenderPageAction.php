@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusSuluPlugin\Controller\Action;
 
-use BitBag\SyliusSuluPlugin\ApiClient\SuluApiClient;
-use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategy;
+use BitBag\SyliusSuluPlugin\ApiClient\SuluApiClientInterface;
+use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategyInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Webmozart\Assert\Assert;
@@ -13,8 +13,8 @@ use Webmozart\Assert\Assert;
 final class RenderPageAction
 {
     public function __construct(
-        private SuluApiClient $suluApiClient,
-        private SuluPageRendererStrategy $pageRendererStrategy,
+        private SuluApiClientInterface $suluApiClient,
+        private SuluPageRendererStrategyInterface $pageRendererStrategy,
     ) {
     }
 
@@ -33,7 +33,7 @@ final class RenderPageAction
         $page = $this->pageRendererStrategy->renderPage($page);
 
         if (strlen($page) === 0) {
-            return new Response(null, 404);
+            return new Response('', 404);
         }
 
         return new Response($page);
