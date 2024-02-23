@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\BitBag\SyliusSuluPlugin\Behat\Context\Ui;
 
 use Behat\Behat\Context\Context;
@@ -104,5 +106,4 @@ final class SuluAdminPanelContext implements Context
 
         $button->click();
     }
-
 }
