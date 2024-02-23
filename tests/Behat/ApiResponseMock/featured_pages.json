@@ -1,0 +1,141 @@
+{
+  "id": "6c0542ce-a3e9-449d-b684-783a2e7d38ae",
+  "nodeType": 1,
+  "type": "page",
+  "template": "featured_pages",
+  "content": {
+    "category_selection": [],
+    "title": "Featured pages",
+    "url": "/featured-pages",
+    "article": "<p>FeaturedPages</p>",
+    "links": [
+      {
+        "id": "6c0542ce-a3e9-449d-b684-783a2e7d38ae",
+        "nodeType": 1,
+        "type": "page",
+        "template": "blog_page",
+        "content": {
+          "title": "Blog Page 1",
+          "url": "/blog-page-1",
+          "article": "<p>Blog Page 1</p>",
+          "excerptTitle": "",
+          "excerptDescription": ""
+        },
+        "view": {
+          "title": [],
+          "url": [],
+          "article": [],
+          "excerptTitle": [],
+          "excerptDescription": []
+        },
+        "author": "1",
+        "authored": "2024-02-12T20:36:49+0000",
+        "changer": 1,
+        "changed": "2024-02-13T13:58:45+0000",
+        "creator": 1,
+        "created": "2024-02-12T20:36:49+0000"
+      },
+      {
+        "id": "7c6acba2-d1b6-4985-96e2-b12db89b8414",
+        "nodeType": 1,
+        "type": "page",
+        "template": "blog_page",
+        "content": {
+          "title": "Blog Page 2",
+          "url": "/blog-page-2",
+          "article": "<p>Blog Page 2</p>",
+          "excerptTitle": "",
+          "excerptDescription": ""
+        },
+        "view": {
+          "title": [],
+          "url": [],
+          "article": [],
+          "excerptTitle": [],
+          "excerptDescription": []
+        },
+        "author": 1,
+        "authored": "2024-02-12T20:35:45+0000",
+        "changer": 1,
+        "changed": "2024-02-12T20:35:45+0000",
+        "creator": 1,
+        "created": "2024-02-12T20:35:45+0000"
+      },
+      {
+        "id": "7c6acba2-d1b6-4985-96e2-b12db89b8414",
+        "nodeType": 1,
+        "type": "page",
+        "template": "blog_page",
+        "content": {
+          "title": "Blog Page 3",
+          "url": "/blog-page-3",
+          "article": "<p>Blog Page 3</p>",
+          "excerptTitle": "",
+          "excerptDescription": ""
+        },
+        "view": {
+          "title": [],
+          "url": [],
+          "article": [],
+          "excerptTitle": [],
+          "excerptDescription": []
+        },
+        "author": 1,
+        "authored": "2024-02-12T20:35:45+0000",
+        "changer": 1,
+        "changed": "2024-02-12T20:35:45+0000",
+        "creator": 1,
+        "created": "2024-02-12T20:35:45+0000"
+      }
+    ],
+    "blocks": []
+  },
+  "view": {
+    "category_selection": {
+      "ids": []
+    },
+    "title": [],
+    "url": [],
+    "article": [],
+    "links": {
+      "ids": []
+    },
+    "blocks": [
+      {
+        "quote": [],
+        "quoteReference": []
+      },
+      {
+        "quote": [],
+        "quoteReference": []
+      }
+    ]
+  },
+  "author": "1",
+  "authored": "2024-02-12T20:36:49+0000",
+  "changer": 1,
+  "changed": "2024-02-13T13:58:45+0000",
+  "creator": 1,
+  "created": "2024-02-12T20:36:49+0000",
+  "extension": {
+    "seo": {
+      "title": "",
+      "description": "",
+      "keywords": "",
+      "canonicalUrl": "",
+      "noIndex": false,
+      "noFollow": false,
+      "hideInSitemap": false
+    },
+    "excerpt": {
+      "title": "",
+      "more": "",
+      "description": "",
+      "categories": [],
+      "tags": [],
+      "segments": [],
+      "icon": [],
+      "images": []
+    }
+  }
+}

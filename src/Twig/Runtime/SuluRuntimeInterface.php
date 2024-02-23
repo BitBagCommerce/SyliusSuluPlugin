@@ -17,4 +17,6 @@ interface SuluRuntimeInterface extends RuntimeExtensionInterface
     public function renderSuluBlocksWithType(array $blocks, string $type): string;
 
     public function renderSuluBlockWithType(array $blocks, string $type): string;
+
+    public function hasSuluBlock(array $page, string $type): bool;
 }

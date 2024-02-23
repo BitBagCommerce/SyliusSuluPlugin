@@ -1,0 +1,48 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{%- block title -%}
+    {% if page.title is not empty %}
+        {{ page.title }}
+    {% endif %}
+{%- endblock -%}
+
+{% block content %}
+    <div class="ui segment">
+        <h1 class="ui dividing header bitbag-page-name" id="page-title">{{ page.title }}</h1>
+
+        <div class="ui hidden divider"></div>
+        {% if bitbag_page_has_sulu_block(page, 'image')  %}
+            <div class="bitbag-page-image" id="block-image">{{ bitbag_render_sulu_block_with_type(page.blocks, 'image')|raw }}</div>
+        {% endif %}
+
+        <div class="ui hidden divider"></div>
+        {% if bitbag_page_has_sulu_block(page, 'text') %}
+            <div class="bitbag-page-content" id="block-content">{{ bitbag_render_sulu_block_with_type(page.blocks, 'text') }}</div>
+        {% elseif page.content is defined and page.content is not null %}
+            <div class="bitbag-page-content" id="page-content">{{ page.content }}</div>
+        {% endif %}
+        <div class="ui hidden divider"></div>
+
+
+        {% if bitbag_page_has_sulu_block(page, 'quote')  %}
+            <div class="bitbag-page-quote" id="block-quote">{{ bitbag_render_sulu_block_with_type(page.blocks, 'quote') }}</div>
+        {% endif %}
+    </div>
+    {% if page.tags is defined and page.tags|length > 0 %}
+        <div class="bitbag-similar-pages" id="tags">
+            <strong>Tags :</strong>
+            {% for tag in page.tags %}
+                <a href="{{ tag.content.url }}" class="ui label">{{ tag.content.name }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if page.links is defined and page.links|length > 0 %}
+        <div class="bitbag-similar-pages" id="similar-pages">
+            <strong> {{ 'Similar posts' }}: </strong>
+            {% for link in page.links %}
+                <a href="{{ link.content.url }}" class="ui">{{ link.content.title }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

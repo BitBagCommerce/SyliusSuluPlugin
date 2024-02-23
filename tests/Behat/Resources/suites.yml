@@ -1,0 +1,4 @@
+imports:
+    - suites/ui/sulu_page.yml
+    - suites/ui/render_sulu_page.yml
+    - suites/ui/cache_sulu_page.yml

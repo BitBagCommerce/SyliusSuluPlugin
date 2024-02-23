@@ -59,10 +59,10 @@ class SuluRuntime implements SuluRuntimeInterface
     public function renderSuluBlockWithType(array $blocks, string $type): string
     {
         $blocks = array_filter($blocks, fn (array $block) => $block['type'] === $type);
-
         if (count($blocks) > 1) {
             $blocks = $blocks[0];
         }
+
         $content = '';
 
         foreach ($blocks as $block) {
@@ -70,5 +70,22 @@ class SuluRuntime implements SuluRuntimeInterface
         }
 
         return $content;
+    }
+
+    public function hasSuluBlock(array $page, string $type): bool
+    {
+        if (!array_key_exists('blocks', $page)) {
+            return false;
+        }
+
+        $blocks = $page['blocks'];
+
+        if (count($blocks) === 0) {
+            return false;
+        }
+
+        $blocks = array_filter($blocks, fn (array $block) => $block['type'] === $type);
+
+        return count($blocks) !== 0;
     }
 }

@@ -1,0 +1,19 @@
+default:
+  suites:
+    render_sulu_page:
+      contexts:
+        - sylius.behat.context.hook.doctrine_orm
+        - sylius.behat.context.transform.channel
+        - sylius.behat.context.transform.customer
+        - sylius.behat.context.transform.product
+        - sylius.behat.context.transform.shared_storage
+
+        - tests.bitbag.sylius_sulu_plugin.behat.context.setup.sulu_page_context
+        - tests.bitbag.sylius_sulu_plugin.behat.context.ui.sulu_page_context
+        - sylius.behat.context.ui.channel
+        - sylius.behat.context.setup.shop_security
+        - sylius.behat.context.setup.channel
+        - sylius.behat.context.setup.user
+        
+      filters:
+        tags: "@render_sulu_page&&@ui"

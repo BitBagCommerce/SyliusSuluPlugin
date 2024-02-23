@@ -16,3 +16,35 @@ sylius_shop:
 
 sylius_api:
     enabled: true
+
+sylius_channel:
+    resources:
+        channel:
+            classes:
+                model: Tests\BitBag\SyliusSuluPlugin\Application\src\Entity\Channel\Channel
+
+
+sylius_ui:
+    events:
+        sylius.shop.homepage:
+            blocks:
+                featured_pages:
+                    template: "@SyliusShop/Homepage/_featuredPages.html.twig"
+                    priority: 20
+sylius_grid:
+    grids:
+        sylius_admin_channel:
+            actions:
+                item:
+                    invalidate_sulu_cache:
+                        type: invalidate_sulu_cache
+                        label: bitbag.sulu_plugin.purge_channel_cache
+                        icon: sync
+                        options:
+                            link:
+                                route: bitbag_purge_sulu_cache_for_channel
+                                parameters:
+                                    id: resource.id
+    templates:
+        action:
+            invalidate_sulu_cache: "@BitBagSyliusSuluPlugin/Admin/Grid/Action/invalidateSuluCache.html.twig"
