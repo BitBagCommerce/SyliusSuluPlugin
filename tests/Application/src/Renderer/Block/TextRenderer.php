@@ -9,7 +9,7 @@ use Twig\Environment;
 
 class TextRenderer implements SuluBlockRenderStrategyInterface
 {
-    public const TEXT = 'text';
+    public const TYPE = 'text';
 
     public function __construct(
         private Environment $twig,
@@ -38,7 +38,7 @@ class TextRenderer implements SuluBlockRenderStrategyInterface
 
     public function getAllowedBlocks(): array
     {
-        return [self::TEXT];
+        return [self::TYPE];
     }
 
     public function getTemplate(): string

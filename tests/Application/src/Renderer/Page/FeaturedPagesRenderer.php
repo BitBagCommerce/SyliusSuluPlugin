@@ -9,7 +9,7 @@ use Twig\Environment;
 
 class FeaturedPagesRenderer implements SuluPageRenderStrategyInterface
 {
-    public const BLOG_PAGE = 'featured_pages';
+    public const PAGE_TYPE = 'featured_pages';
 
     public function __construct(
         private Environment $twig,
@@ -39,7 +39,7 @@ class FeaturedPagesRenderer implements SuluPageRenderStrategyInterface
 
     public function getAllowedPageTemplates(): array
     {
-        return [self::BLOG_PAGE];
+        return [self::PAGE_TYPE];
     }
 
     public function getTemplate(): string
