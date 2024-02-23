@@ -12,3 +12,19 @@ sylius_shop_default_locale:
     methods: [GET]
     defaults:
         _controller: sylius.controller.shop.locale_switch::switchAction
+
+bitbag_render_sulu_page:
+    path: /{locale}/page/{slug}
+    methods: [GET]
+    defaults:
+        _controller: bitbag.sylius_sulu_plugin.controller.action.render_page_action
+        _sylius:
+            permission: false
+
+bitbag_render_sulu_sub_page:
+    path: /{locale}/page/{slug}/{second_slug}
+    methods: [GET]
+    defaults:
+        _controller: bitbag.sylius_sulu_plugin.controller.action.render_page_action
+        _sylius:
+            permission: false

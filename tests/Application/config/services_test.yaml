@@ -6,3 +6,33 @@ imports:
 # see https://github.com/FriendsOfBehat/SymfonyExtension/issues/88
 services:
     Symfony\Component\BrowserKit\AbstractBrowser: '@test.client'
+    
+    tests.bitbag.sylius_sulu_plugin.application.src.renderer.page.featured_pages_renderer:
+        class: Tests\BitBag\SyliusSuluPlugin\Application\src\Renderer\Page\FeaturedPagesRenderer
+        arguments: [ '@twig' ]
+        tags: 
+            - { name: bitbag.sylius_sulu_plugin.strategy.page_renderer}
+
+    tests.bit_bag.sylius_sulu_plugin.application.src.renderer.page.blog_page_renderer:
+        class: Tests\BitBag\SyliusSuluPlugin\Application\src\Renderer\Page\BlogPageRenderer
+        arguments: [ '@twig' ]
+        tags:
+            - { name: bitbag.sylius_sulu_plugin.strategy.page_renderer }
+    
+    tests.bitbag.sylius_sulu_plugin.application.src.renderer.block.text_renderer:
+        class: Tests\BitBag\SyliusSuluPlugin\Application\src\Renderer\Block\TextRenderer
+        arguments: [ '@twig' ]
+        tags:
+            - { name: bitbag.sylius_sulu_plugin.strategy.block_renderer }
+    
+    tests.bitbag.sylius_sulu_plugin.application.src.renderer.block.quote_renderer:
+        class: Tests\BitBag\SyliusSuluPlugin\Application\src\Renderer\Block\QuoteRenderer
+        arguments: [ '@twig' ]
+        tags:
+            - { name: bitbag.sylius_sulu_plugin.strategy.block_renderer }
+    
+    tests.bitbag.sylius_sulu_plugin.application.src.renderer.block.image_renderer:
+        class: Tests\BitBag\SyliusSuluPlugin\Application\src\Renderer\Block\ImageRenderer
+        arguments: [ '@twig' ]
+        tags:
+            - { name: bitbag.sylius_sulu_plugin.strategy.block_renderer }

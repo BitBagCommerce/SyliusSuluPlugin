@@ -7,3 +7,8 @@ framework:
     serializer:
         mapping:
             paths: [ '%kernel.project_dir%/config/serialization' ]
+    cache:
+        pools:
+            sulu:
+                adapter: cache.adapter.filesystem
+                default_lifetime: 3600

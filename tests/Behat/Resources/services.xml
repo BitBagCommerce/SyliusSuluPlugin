@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+            http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Context\Setup\SuluPageContext"
+                 id="tests.bitbag.sylius_sulu_plugin.behat.context.setup.sulu_page_context"
+                 public="true"
+        >
+            <argument type="service" id="bitbag.sylius_sulu_plugin.api_client.sulu_api_client"/>
+            <argument type="service" id="sylius.behat.shared_storage"/>
+            <argument>%bitbag.sulu_cache_dir%</argument>
+            <argument type="service" id="doctrine.orm.entity_manager"/>
+        </service>
+
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Context\Ui\SuluPageContext"
+                 id="tests.bitbag.sylius_sulu_plugin.behat.context.ui.sulu_page_context"
+                 public="true"
+        >
+            <argument type="service" id="tests.bitbag.sylius_sulu_plugin.behat.page.home_page"/>
+            <argument type="service" id="tests.bitbag.sylius_sulu_plugin.behat.page.sulu_page"/>
+        </service>
+
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Context\Ui\SuluAdminPanelContext"
+                 id="tests.bitbag.sylius_sulu_plugin.behat.context.ui.sulu_admin_panel_context"
+                 public="true"
+
+        >
+            <argument type="service" id="tests.bitbag.sylius_sulu_plugin.behat.page.channel_index_page"/>
+            <argument>%bitbag.sulu_cache_dir%</argument>
+            <argument type="service" id="sylius.behat.notification_checker" />
+            <argument type="service" id="sylius.behat.java_script_test_helper" />
+        </service>
+
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Services\SuluApiClient"
+                 id="bitbag.sylius_sulu_plugin.api_client.sulu_api_client"
+        >
+            <argument id="http_client" type="service"/>
+            <argument id="sylius.context.shopper" type="service"/>
+            <argument>%bitbag.sulu_base_uri%</argument>
+            <argument>%bitbag.sulu_cache_dir%</argument>
+        </service>
+
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Page\HomePage"
+                 id="tests.bitbag.sylius_sulu_plugin.behat.page.home_page"
+                 parent="sylius.behat.page.shop.home"
+        />
+
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Page\SuluPage"
+                 id="tests.bitbag.sylius_sulu_plugin.behat.page.sulu_page"
+                 parent="sylius.behat.symfony_page"
+        />
+
+        <service class="Tests\BitBag\SyliusSuluPlugin\Behat\Page\ChannelIndexPage"
+                 id="tests.bitbag.sylius_sulu_plugin.behat.page.channel_index_page"
+                 parent="sylius.behat.page.admin.channel.index"
+        />
+
+    </services>
+</container>
