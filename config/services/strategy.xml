@@ -6,7 +6,6 @@
             http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-
         <service class="BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRendererStrategy"
                  id="bitbag.sylius_sulu_plugin.renderer.block.sulu_block_renderer_strategy"
         >

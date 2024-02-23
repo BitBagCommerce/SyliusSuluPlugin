@@ -17,7 +17,7 @@
 
         <div class="ui hidden divider"></div>
         {% if bitbag_page_has_sulu_block(page, 'text') %}
-            <div class="bitbag-page-content" id="block-content">{{ bitbag_render_sulu_block_with_type(page.blocks, 'text') }}</div>
+            <div class="bitbag-page-content" id="block-content">{{ bitbag_render_sulu_block_with_type(page.blocks, 'text')|raw }}</div>
         {% elseif page.content is defined and page.content is not null %}
             <div class="bitbag-page-content" id="page-content">{{ page.content }}</div>
         {% endif %}
@@ -25,7 +25,7 @@
 
 
         {% if bitbag_page_has_sulu_block(page, 'quote')  %}
-            <div class="bitbag-page-quote" id="block-quote">{{ bitbag_render_sulu_block_with_type(page.blocks, 'quote') }}</div>
+            <div class="bitbag-page-quote" id="block-quote">{{ bitbag_render_sulu_block_with_type(page.blocks, 'quote')|raw }}</div>
         {% endif %}
     </div>
     {% if page.tags is defined and page.tags|length > 0 %}

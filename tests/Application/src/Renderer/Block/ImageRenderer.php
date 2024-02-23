@@ -9,7 +9,7 @@ use Twig\Environment;
 
 class ImageRenderer implements SuluBlockRenderStrategyInterface
 {
-    public const IMAGE = 'image';
+    public const TYPE = 'image';
 
     public function __construct(
         private Environment $twig,
@@ -37,7 +37,7 @@ class ImageRenderer implements SuluBlockRenderStrategyInterface
 
     public function getAllowedBlocks(): array
     {
-        return [self::IMAGE];
+        return [self::TYPE];
     }
 
     public function getTemplate(): string
