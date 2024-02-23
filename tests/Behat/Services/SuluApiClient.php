@@ -87,9 +87,9 @@ final class SuluApiClient implements SuluApiClientInterface
 
     private function mockResponses(): array
     {
-        $featured = file_get_contents(__DIR__.'/../ApiResponseMock/featured_pages.json');
-        $pageWithProperties = file_get_contents(__DIR__.'/../ApiResponseMock/blog_page_with_properties.json');
-        $pageWithBlocks = file_get_contents(__DIR__.'/../ApiResponseMock/blog_page_with_blocks_and_links.json');
+        $featured = file_get_contents(__DIR__ . '/../ApiResponseMock/featured_pages.json');
+        $pageWithProperties = file_get_contents(__DIR__ . '/../ApiResponseMock/blog_page_with_properties.json');
+        $pageWithBlocks = file_get_contents(__DIR__ . '/../ApiResponseMock/blog_page_with_blocks_and_links.json');
 
         return [
            'featured_pages' => new MockResponse($featured, ['http_code' => 200]),
