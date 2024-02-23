@@ -9,7 +9,6 @@ Feature: Caching sulu page request
         And Sulu has defined page "blog_page_with_blocks_and_links" in locale "en_US"
         And Cache for sulu not exists
 
-
     @ui
     Scenario: See the featured pages on homepage
         When I visit this channel's homepage

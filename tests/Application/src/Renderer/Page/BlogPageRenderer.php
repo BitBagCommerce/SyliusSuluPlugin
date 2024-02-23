@@ -9,7 +9,7 @@ use Twig\Environment;
 
 class BlogPageRenderer implements SuluPageRenderStrategyInterface
 {
-    public const BLOG_PAGE = 'blog';
+    public const PAGE_TYPE = 'blog';
 
     public function __construct(
         private Environment $twig,
@@ -36,7 +36,7 @@ class BlogPageRenderer implements SuluPageRenderStrategyInterface
 
     public function getAllowedPageTemplates(): array
     {
-        return [self::BLOG_PAGE];
+        return [self::PAGE_TYPE];
     }
 
     public function getTemplate(): string

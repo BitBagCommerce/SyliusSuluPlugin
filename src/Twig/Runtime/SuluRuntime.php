@@ -8,7 +8,7 @@ use BitBag\SyliusSuluPlugin\ApiClient\SuluApiClientInterface;
 use BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRendererStrategyInterface;
 use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategyInterface;
 
-class SuluRuntime implements SuluRuntimeInterface
+final class SuluRuntime implements SuluRuntimeInterface
 {
     public function __construct(
         private SuluApiClientInterface $suluApiClient,
@@ -80,12 +80,12 @@ class SuluRuntime implements SuluRuntimeInterface
 
         $blocks = $page['blocks'];
 
-        if (count($blocks) === 0) {
+        if (0 === count($blocks)) {
             return false;
         }
 
         $blocks = array_filter($blocks, fn (array $block) => $block['type'] === $type);
 
-        return count($blocks) !== 0;
+        return 0 !== count($blocks);
     }
 }

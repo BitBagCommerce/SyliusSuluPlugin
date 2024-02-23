@@ -10,7 +10,7 @@ use Sylius\Component\Core\Model\ChannelInterface;
 use Tests\BitBag\SyliusSuluPlugin\Behat\Page\ChannelIndexPage;
 use Webmozart\Assert\Assert;
 
-class SuluAdminPanelContext implements Context
+final class SuluAdminPanelContext implements Context
 {
     public function __construct(
         private ChannelIndexPage $channelIndexPage,
