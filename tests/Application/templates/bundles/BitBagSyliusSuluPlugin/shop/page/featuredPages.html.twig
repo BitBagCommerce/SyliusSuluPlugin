@@ -1,0 +1,16 @@
+<div class="ui three odd doubling cards">
+    {% for link in links %}
+        <div class="ui fluid card" {{ sylius_test_html_attribute(link.content.title) }}>
+            <div class="ui">
+                <div class="title">
+                    <span>{{ link.content.title }}</span>
+                </div>
+                <div class="content">
+                    <div class="center">
+                       <span>{{ link.content.article|raw }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

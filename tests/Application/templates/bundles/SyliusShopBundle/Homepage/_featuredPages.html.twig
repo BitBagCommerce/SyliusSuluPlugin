@@ -1,0 +1,7 @@
+<h2 class="ui center aligned huge header">{{ 'Featured pages' }}</h2>
+<div class="ui hidden divider"></div>
+
+<div class="featured-pages" {{ sylius_test_html_attribute('featured-pages') }}>
+    {{ render(url('bitbag_render_sulu_page', {'slug': 'featured_pages', 'locale': sylius.localeCode })) }}
+</div>
+<div class="ui hidden divider"></div>

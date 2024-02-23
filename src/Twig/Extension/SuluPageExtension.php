@@ -23,6 +23,7 @@ final class SuluPageExtension extends AbstractExtension
             new TwigFunction('bitbag_render_sulu_blocks', [$this->suluRuntime, 'renderSuluBlocks']),
             new TwigFunction('bitbag_render_sulu_blocks_with_type', [$this->suluRuntime, 'renderSuluBlocksWithType']),
             new TwigFunction('bitbag_render_sulu_block_with_type', [$this->suluRuntime, 'renderSuluBlockWithType']),
+            new TwigFunction('bitbag_page_has_sulu_block', [$this->suluRuntime, 'hasSuluBlock']),
         ];
     }
 }
