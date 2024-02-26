@@ -1,4 +1,4 @@
-# [![](https://bitbag.io/wp-content/uploads/2021/01/SULU.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_sulu)
+# [![](https://bitbag.io/wp-content/uploads/2024/02/SyliusSuluPlugin.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_sulu)
 
 # BitBag SyliusSuluPlugin
 
@@ -32,11 +32,12 @@ Because the frontend of each store is always personalized, the plugin for the mo
 It only provides an abstraction layer and examples which you should use to create your own pages or blocks
 
 
-- [Installation](doc/installation.md)
-- [Sulu configuration](doc/sulu_configuration.md)
-- [Use Cases](doc/use_case.md)
-- [Twig functions](doc/twig-functions.md)
-- [Cache](doc/caching.md)
+- [Installation](docs/installation.md)
+- [Sulu configuration](docs/sulu_configuration.md)
+- [Use Cases](docs/use_case.md)
+- [Twig functions](docs/twig-functions.md)
+- [Cache](docs/caching.md)
+- [Examples](docs/examples.md)
 
 ## We are here to help
 This **open-source plugin was developed to help the Sylius community**. If you have any additional questions, would like help with installing or configuring the plugin, or need any assistance with your Sylius project - let us know!

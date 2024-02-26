@@ -46,7 +46,50 @@ class Channel extends BaseChannel
     use SuluChannelConfigurationTrait;
 ```
 
-5. Finish the installation by updating the database schema
+6. Implement `\BitBag\SyliusSuluPlugin\Entity\ChannelInterface`
+
+
+7. Add doctrine mapping. Choose xml, attributes or annotations, depending what you use on project.
+
+Xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping
+    xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                            http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+>
+    <entity name="App\Entity\Channel\Channel" table="sylius_channel">
+        <field name="suluUseLocalizedUrls" column="sulu_use_localized_url" type="boolean"/>
+    </entity>
+</doctrine-mapping>
+
+```
+
+Attributes or Annotations
+```php
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name='sylius_channel')
+ */
+#[ORM\Entity]
+#[ORM\Table(name: 'sylius_channel')]
+class Channel extends BaseChannel
+{
+
+    use SuluChannelConfigurationTrait;
+
+    /** @ORM\Column(type='boolean', nullable=false name='sulu_use_localized_url') */
+    #[ORM\Column(type: 'boolean', nullable: false, name: 'sulu_use_localized_url')]
+    protected bool $suluUseLocalizedUrls = false;
+}
+
+```
+
+8. Finish the installation by updating the database schema
 
 ```
 $ bin/console cache:clear
@@ -58,14 +101,7 @@ $ bin/console doctrine:migrations:migrate
 ```bash
 $ composer install
 $ cd tests/Application
-```
-Copy file `package.json.~1.XX.0.dist` to `package.json` where `~1.XX.0` is the Sylius version you are using.
 
-```bash
-$ cp package.json.~1.12.0.dist package.json
-```
-
-```bash
 $ yarn install
 $ yarn encore dev
 $ APP_ENV=test bin/console assets:install

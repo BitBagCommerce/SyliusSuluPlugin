@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file was created by developers working at BitBag
+ * Do you need more information about us and what we do? Visit our https://bitbag.io website!
+ * We are hiring developers from all over the world. Join us and start your new, exciting adventure and become part of us: https://bitbag.io/career
+*/
+
 declare(strict_types=1);
 
 namespace spec\BitBag\SyliusSuluPlugin\Renderer\Block;
@@ -7,14 +13,19 @@ namespace spec\BitBag\SyliusSuluPlugin\Renderer\Block;
 use BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRendererStrategy;
 use BitBag\SyliusSuluPlugin\Renderer\Block\SuluBlockRenderStrategyInterface;
 use PhpSpec\ObjectBehavior;
+use Psr\Log\LoggerInterface;
 use Twig\Error\Error;
 use Twig\Error\RuntimeError;
 
 class SuluBlockRendererStrategySpec extends ObjectBehavior
 {
-    function let(SuluBlockRenderStrategyInterface $blockRenderer1, SuluBlockRenderStrategyInterface $blockRenderer2)
+    function let(
+        SuluBlockRenderStrategyInterface $blockRenderer1,
+        SuluBlockRenderStrategyInterface $blockRenderer2,
+        LoggerInterface $logger
+    )
     {
-        $this->beConstructedWith([$blockRenderer1, $blockRenderer2]);
+        $this->beConstructedWith([$blockRenderer1, $blockRenderer2], $logger);
     }
 
     function it_is_initializable()

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusSuluPlugin\Renderer\Block;
 
+use Psr\Log\LoggerInterface;
 use Twig\Error\Error;
 use Twig\Error\RuntimeError;
 
@@ -17,6 +18,7 @@ final class SuluBlockRendererStrategy implements SuluBlockRendererStrategyInterf
 {
     public function __construct(
         private iterable $blockRenderers,
+        private LoggerInterface $logger,
     ) {
     }
 
@@ -33,6 +35,12 @@ final class SuluBlockRendererStrategy implements SuluBlockRendererStrategyInterf
 
                 return $content;
             } catch (Error $error) {
+                $this->logger->error(sprintf(
+                    '%s%s',
+                    'Something goes wrong on page render. Error message : ',
+                    $error->getMessage(),
+                ));
+
                 return '';
             }
         }
