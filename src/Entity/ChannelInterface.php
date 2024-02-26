@@ -10,9 +10,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusSuluPlugin\Entity;
 
-use Sylius\Component\Core\Model\ChannelInterface as BaseChannelInterface;
-
-interface ChannelInterface extends BaseChannelInterface
+interface ChannelInterface
 {
     public function isSuluUseLocalizedUrls(): bool;
 

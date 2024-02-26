@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file was created by developers working at BitBag
+ * Do you need more information about us and what we do? Visit our https://bitbag.io website!
+ * We are hiring developers from all over the world. Join us and start your new, exciting adventure and become part of us: https://bitbag.io/career
+*/
+
 declare(strict_types=1);
 
 namespace spec\BitBag\SyliusSuluPlugin\Renderer\Page;
@@ -7,6 +13,7 @@ namespace spec\BitBag\SyliusSuluPlugin\Renderer\Page;
 use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategy;
 use BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRenderStrategyInterface;
 use PhpSpec\ObjectBehavior;
+use Psr\Log\LoggerInterface;
 use Twig\Error\Error;
 
 class SuluPageRendererStrategySpec extends ObjectBehavior
@@ -14,8 +21,9 @@ class SuluPageRendererStrategySpec extends ObjectBehavior
     function let(
         SuluPageRenderStrategyInterface $pageRenderer1,
         SuluPageRenderStrategyInterface $pageRenderer2,
+        LoggerInterface $logger
     ) {
-        $this->beConstructedWith([$pageRenderer1, $pageRenderer2]);
+        $this->beConstructedWith([$pageRenderer1, $pageRenderer2], $logger);
     }
 
     function it_is_initializable()
