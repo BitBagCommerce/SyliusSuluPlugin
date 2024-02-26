@@ -10,11 +10,13 @@
                  id="bitbag.sylius_sulu_plugin.renderer.block.sulu_block_renderer_strategy"
         >
             <argument type="tagged_iterator" tag="bitbag.sylius_sulu_plugin.strategy.block_renderer"/>
+            <argument type="service" id="monolog.logger"/>
         </service>
 
         <service class="BitBag\SyliusSuluPlugin\Renderer\Page\SuluPageRendererStrategy"
                  id="bitbag.sylius_sulu_plugin.renderer.page.sulu_page_renderer_strategy">
             <argument type="tagged_iterator" tag="bitbag.sylius_sulu_plugin.strategy.page_renderer"/>
+            <argument type="service" id="monolog.logger"/>
         </service>
     </services>
 </container>
