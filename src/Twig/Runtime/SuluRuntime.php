@@ -73,7 +73,7 @@ final class SuluRuntime implements SuluRuntimeInterface
         $block = $blocks[0];
 
         $content = '';
-        $content .= $this->blockRendererStrategy->renderBlock($block) ?? '';
+        $content .= $this->blockRendererStrategy->renderBlock($block);
 
         return $content;
     }
