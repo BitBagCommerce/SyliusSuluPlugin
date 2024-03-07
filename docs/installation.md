@@ -33,16 +33,15 @@ imports:
 ...
 
 bitbag_sylius_sulu_plugin:
-    resource: "@BitBagSyliusSuluPlugin/Resources/config/routing.yml"
+    resource: "@BitBagSyliusSuluPlugin/config/routing.yml"
 ```
 
 5. Use Channel trait in your channel entity.
-```
+```php
 use BitBag\SyliusSuluPlugin\Entity\SuluChannelConfigurationTrait;
 
 class Channel extends BaseChannel
 {
-
     use SuluChannelConfigurationTrait;
 ```
 
