@@ -64,16 +64,16 @@ final class SuluRuntime implements SuluRuntimeInterface
 
     public function renderSuluBlockWithType(array $blocks, string $type): string
     {
-        $blocks = array_filter($blocks, fn (array $block) => $block['type'] === $type);
-        if (count($blocks) > 1) {
-            $blocks = $blocks[0];
+        $blocks = array_values(array_filter($blocks, fn (array $block) => $block['type'] === $type));
+
+        if (0 === count($blocks)) {
+            return '';
         }
+
+        $block = $blocks[0];
 
         $content = '';
-
-        foreach ($blocks as $block) {
-            $content .= $this->blockRendererStrategy->renderBlock($block);
-        }
+        $content .= $this->blockRendererStrategy->renderBlock($block) ?? '';
 
         return $content;
     }
