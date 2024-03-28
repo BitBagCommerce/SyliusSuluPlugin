@@ -1,14 +1,39 @@
-<div class="ui three odd doubling cards">
+<div class="ui two stackable cards">
     {% for link in links %}
         <div class="ui fluid card" {{ sylius_test_html_attribute(link.content.title) }}>
-            <div class="ui">
-                <div class="title">
-                    <span>{{ link.content.title }}</span>
-                </div>
-                <div class="content">
-                    <div class="center">
-                       <span>{{ link.content.article|raw }}</span>
+            <div class="content ui padded grid">
+                {% set has_thumbnail = link.content.thumbnail_url is defined %}
+                {% if has_thumbnail %}
+                    <div class="six wide column pl-0">
+                        <a class="ui blurring dimmable image" href="{{ link.content.url }}">
+                            <div class="ui dimmer">
+                                <div class="content">
+                                    <div class="center">
+                                        <div class="ui inverted button">{{ 'sylius.ui.view_more'|trans }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% set alt = link.content.thumbnail_alt is defined ? link.content.thumbnail_alt : "" %}
+                            <img src="{{ asset(link.content.thumbnail_url, 'shop') }}"
+                                 alt="{{ alt }}" class="ui bordered image"/>
+                        </a>
                     </div>
+                {% endif %}
+                <div class="{% if has_thumbnail %} ten wide{% endif %} wide column pr-0">
+                    <a class="ui header d-block mb-15" href="{{ link.content.url }}">
+                        {% if link.content.excerpt_title != '' %}
+                            {{ link.content.excerpt_title }}
+                        {% else %}
+                            {{ link.content.title }}
+                        {% endif %}
+                    </a>
+                    <p class="text-15">
+                        {% if link.content.excerpt_description != '' %}
+                            {{ link.content.excerpt_description|raw }}
+                        {% else %}
+                            {{ link.content.article|raw }}
+                        {% endif %}
+                    </p>
                 </div>
             </div>
         </div>

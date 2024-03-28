@@ -9,6 +9,7 @@ const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/privat
 Encore
   .setOutputPath('public/build/shop/')
   .setPublicPath('/build/shop')
+  .addEntry('test_app-entry', './assets/shop/entry.js')
   .addEntry('shop-entry', '../../vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/entry.js')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()

@@ -44,7 +44,7 @@ final class SuluPageContext implements Context
 
         /** @var NodeElement $page */
         foreach ($pages as $page) {
-            if ($page->find('css', 'span')?->getText() === $pageTitle) {
+            if ($page->find('css', 'div.ten.wide.wide.column.pr-0 > a')?->getText() === $pageTitle) {
                 return;
             }
         }

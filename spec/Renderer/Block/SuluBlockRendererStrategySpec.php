@@ -22,9 +22,8 @@ class SuluBlockRendererStrategySpec extends ObjectBehavior
     function let(
         SuluBlockRenderStrategyInterface $blockRenderer1,
         SuluBlockRenderStrategyInterface $blockRenderer2,
-        LoggerInterface $logger
-    )
-    {
+        LoggerInterface $logger,
+    ) {
         $this->beConstructedWith([$blockRenderer1, $blockRenderer2], $logger);
     }
 

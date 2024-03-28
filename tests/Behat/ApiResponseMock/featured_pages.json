@@ -10,16 +10,46 @@
     "article": "<p>FeaturedPages</p>",
     "links": [
       {
-        "id": "6c0542ce-a3e9-449d-b684-783a2e7d38ae",
+        "id": "7c6acba2-d1b6-4985-96e2-b12db89b8414",
         "nodeType": 1,
         "type": "page",
         "template": "blog_page",
         "content": {
           "title": "Blog Page 1",
           "url": "/blog-page-1",
-          "article": "<p>Blog Page 1</p>",
-          "excerptTitle": "",
-          "excerptDescription": ""
+          "article": "Fashion in Europe <strong>encompass a minimalist approach</strong>, sustainable materials, and the use of natural light. Emphasizing functionality, elegance, and eco-friendly solutions, these trends prioritize harmonious, sleek interiors with an innovative design approach. European design trends showcase simplicity of form and a commitment to innovation.",
+          "excerpt_title": "Modern design trends in Europe",
+          "excerpt_description": "",
+          "thumbnail_url": "build/shop/images/a-fashionable-young-man-in-suit-walking-down-the-stiars.webp",
+          "thumbnail_alt": "Example thumbnail 2"
+        },
+        "view": {
+          "title": [],
+          "url": [],
+          "article": [],
+          "excerpt_title": [],
+          "excerpt_description": []
+        },
+        "author": 1,
+        "authored": "2024-02-12T20:35:45+0000",
+        "changer": 1,
+        "changed": "2024-02-12T20:35:45+0000",
+        "creator": 1,
+        "created": "2024-02-12T20:35:45+0000"
+      },
+      {
+        "id": "7c6acba2-d1b6-4985-96e2-b12db89b8415",
+        "nodeType": 1,
+        "type": "page",
+        "template": "blog_page",
+        "content": {
+          "title": "Blog Page 2",
+          "url": "/blog-page-2",
+          "article": "Winter is coming! So here is the problem: how to dress warm and look good at the same time?",
+          "excerpt_title": "",
+          "excerpt_description": "From layering techniques to the best fabric choices, this guide offers <strong>practical tips for creating fashionable winter looks</strong> without sacrificing comfort. Whether it's cozy sweaters, insulated boots, or fashionable outerwear, this guide covers everything you need to know to stay comfortable and chic in the winter.",
+          "thumbnail_url": "build/shop/images/fashion-magazines-on-table.webp",
+          "thumbnail_alt": "Example thumbnail 3"
         },
         "view": {
           "title": [],
@@ -27,6 +57,34 @@
           "article": [],
           "excerptTitle": [],
           "excerptDescription": []
+        },
+        "author": 1,
+        "authored": "2024-02-12T20:35:45+0000",
+        "changer": 1,
+        "changed": "2024-02-12T20:35:45+0000",
+        "creator": 1,
+        "created": "2024-02-12T20:35:45+0000"
+      },
+      {
+        "id": "6c0542ce-a3e9-449d-b684-783a2e7d38ae",
+        "nodeType": 1,
+        "type": "page",
+        "template": "blog_page",
+        "content": {
+          "title": "Blog Page 3",
+          "url": "/blog-page-3",
+          "article": "Shoe size tables vary worldwide. Many countries use the metric system for shoe sizing, while others rely on the imperial system. It's important to consult a specific shoe size conversion chart when purchasing footwear internationally.",
+          "excerpt_title": "Shoe sizes tables of the World",
+          "excerpt_description": "Shoe size tables vary worldwide. Many countries use the metric system for shoe sizing, while others rely on the imperial system. It's important to consult a specific shoe size conversion chart when purchasing footwear internationally.",
+          "thumbnail_url": "build/shop/images/laughing-woman-in-yellowish-dress-on-stairs.webp",
+          "thumbnail_alt": "Example thumbnail 1"
+        },
+        "view": {
+          "title": [],
+          "url": [],
+          "article": [],
+          "excerpt_title": [],
+          "excerpt_description": []
         },
         "author": "1",
         "authored": "2024-02-12T20:36:49+0000",
@@ -34,58 +92,6 @@
         "changed": "2024-02-13T13:58:45+0000",
         "creator": 1,
         "created": "2024-02-12T20:36:49+0000"
-      },
-      {
-        "id": "7c6acba2-d1b6-4985-96e2-b12db89b8414",
-        "nodeType": 1,
-        "type": "page",
-        "template": "blog_page",
-        "content": {
-          "title": "Blog Page 2",
-          "url": "/blog-page-2",
-          "article": "<p>Blog Page 2</p>",
-          "excerptTitle": "",
-          "excerptDescription": ""
-        },
-        "view": {
-          "title": [],
-          "url": [],
-          "article": [],
-          "excerptTitle": [],
-          "excerptDescription": []
-        },
-        "author": 1,
-        "authored": "2024-02-12T20:35:45+0000",
-        "changer": 1,
-        "changed": "2024-02-12T20:35:45+0000",
-        "creator": 1,
-        "created": "2024-02-12T20:35:45+0000"
-      },
-      {
-        "id": "7c6acba2-d1b6-4985-96e2-b12db89b8414",
-        "nodeType": 1,
-        "type": "page",
-        "template": "blog_page",
-        "content": {
-          "title": "Blog Page 3",
-          "url": "/blog-page-3",
-          "article": "<p>Blog Page 3</p>",
-          "excerptTitle": "",
-          "excerptDescription": ""
-        },
-        "view": {
-          "title": [],
-          "url": [],
-          "article": [],
-          "excerptTitle": [],
-          "excerptDescription": []
-        },
-        "author": 1,
-        "authored": "2024-02-12T20:35:45+0000",
-        "changer": 1,
-        "changed": "2024-02-12T20:35:45+0000",
-        "creator": 1,
-        "created": "2024-02-12T20:35:45+0000"
       }
     ],
     "blocks": []
