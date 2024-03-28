@@ -15,6 +15,6 @@ Feature: Show featured pages on homepage
     Scenario: See the featured pages on homepage
         When I visit this channel's homepage
         Then I should see 3 featured pages.
-        And I should see featured page "Blog Page 1"
+        And I should see featured page "Modern design trends in Europe"
         And I should see featured page "Blog Page 2"
-        And I should see featured page "Blog Page 3"
+        And I should see featured page "Shoe sizes tables of the World"

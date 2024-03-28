@@ -21,7 +21,7 @@ class SuluPageRendererStrategySpec extends ObjectBehavior
     function let(
         SuluPageRenderStrategyInterface $pageRenderer1,
         SuluPageRenderStrategyInterface $pageRenderer2,
-        LoggerInterface $logger
+        LoggerInterface $logger,
     ) {
         $this->beConstructedWith([$pageRenderer1, $pageRenderer2], $logger);
     }
