@@ -34,8 +34,8 @@ It only provides an abstraction layer and examples which you should use to creat
 
 - [Installation](docs/installation.md)
 - [Sulu configuration](docs/sulu_configuration.md)
-- [Use Cases](docs/use_case.md)
-- [Twig functions](docs/twig-functions.md)
+- [Use Cases](docs/use_cases.md)
+- [Twig functions](docs/twig_functions.md)
 - [Cache](docs/caching.md)
 - [Examples](docs/examples.md)
 
